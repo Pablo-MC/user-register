@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import Card from '../UI/Card';
 import Button from '../UI/Button';
 import ErrorModal from '../UI/ErrorModal';
@@ -59,7 +59,7 @@ const AddUser = (props) => {
   };
 
   return (
-    <div>
+    <Fragment>
       {error &&
         <ErrorModal
           title={error.title}
@@ -79,14 +79,14 @@ const AddUser = (props) => {
           <label htmlFor="age">Age (Years)</label>
           <input
             id="age"
-            value={newUser.age}
             type="number"
+            value={newUser.age}
             onChange={ageChangeHandler}
           />
           <Button type="submit">Add User</Button>
         </form>
       </Card>
-    </div>
+    </Fragment>
   );
 }
 
